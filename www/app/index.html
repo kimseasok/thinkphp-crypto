@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 110.4px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>APP</title>
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="./static/phone.css" type="text/css">
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="./static/index.css" type="text/css">
+    <script src="./static/jquery.min.js"></script>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
+</head>
+<body style="">
+<div class="i1">
+    <div class="i2">
+        <div class="self">
+            <!--left-->
+            <div class="l1">
+                <img src="./static/phone.png">
+            </div>
+            <!--right-->
+            <div class="r1">
+                <!--title-->
+                <div class="title" style="text-align:center">
+                    <h3 style="font-size:0.5rem;color:#fff;margin:0;padding:0">MBN</h3>
+                </div>
+                <!--btn-->
+                <div class="right">
+                    <!--left-->
+                    <div class="left-btn">
+                        <!--apple-->
+                        <a class="btn img1" href="mbn.mobileconfig">
+                            <img src="./static/iphone.png">
+                        </a>
+                        <!--android-->
+                        <a class="btn img2" href="apk/mbn.apk">
+                            <img src="./static/android.png">
+                        </a>
+                    </div>
+                    <!--right-->
+                    <div class="right-btn">
+                        <div class="btn code" style="text-align: center">
+                            <img src="./static/code.png" style="height: auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wxtip" id="JweixinTip">
+    <div class="imgs"></div>
+</div>
+<script>
+    (function (doc, win) {
+        if (doc.documentElement.clientWidth <= 768) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = 200 * (clientWidth / 750) + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+            $(".code").find("img").attr('src', 'static/code.png')
+            $(".img1").on({
+                mouseover: function () {
+                    $(this).find("img").attr('src', 'static/out-iphone.png');
+                    $(".img2").find("img").attr('src', 'static/android.png');
+                }
+            });
+            $(".img2").on({
+                mouseover: function () {
+                    $(this).find("img").attr('src', 'static/out-android.png');
+                    $(".img1").find("img").attr('src', 'static/iphone.png');
+                }
+            });
+            $(".img1").find("img").attr('src', 'static/iphone.png');
+            $(".img2").find("img").attr('src', 'static/android.png');
+        } else {
+            $(".img1").on({
+                mouseover: function () {
+                    $(this).find("img").attr('src', 'static/out-iphone.png');
+                    $(".img2").find("img").attr('src', 'static/android.png');
+                }
+            });
+            $(".img2").on({
+                mouseover: function () {
+                    $(this).find("img").attr('src', 'static/out-android.png');
+                    $(".img1").find("img").attr('src', 'static/iphone.png');
+                }
+            });
+        }
+
+    })(document, window);
+</script>
+
+</body>
+</html>

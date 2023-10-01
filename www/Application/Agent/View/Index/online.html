@@ -1,0 +1,133 @@
+<include file="Public:header"/>
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{:L('代理中心')}</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/base.css" media="all">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/module.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/default_color.css" media="all">
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/layer/layer.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/flat-ui.css">
+	<script src="__PUBLIC__/Admin/js/flat-ui.min.js"></script>
+	<script src="__PUBLIC__/Admin/js/application.js"></script>
+</head>
+<body style="margin:0px;padding:0px; margin-top:100px;">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="navbar-header" style="background-color:#3c434d;">
+		<a class="navbar-brand" style="width:200px;text-align:center;background-color:#3c434d;" href="{:U('Agent/Index/index')}">
+		    <span>{:L('代理系统')}</span>	
+		</a>
+	</div>
+	<div class="navbar-collapse collapse">
+		<ul class="nav navbar-nav">
+			<li> 
+			    <a href="{:U('Agent/Index/index')}">{:L('会员列表')}</a>
+			</li>
+			
+			<li> 
+				<a href="{:U('Agent/Index/jclist')}">{:L('合约建仓订单')}</a>
+			</li>
+			
+			<li>
+			    <a href="{:U('Agent/Index/pclist')}">{:L('合约平仓订单')}</a>
+			</li>
+				<li class="active">
+			     <a href="{:U('Agent/Index/online')}">{:L('在线客服')}</a>
+			</li>
+				<li>
+			    <a href="{:U('Agent/Index/log')}">{:L('新币认购记录')}</a>
+			</li>
+				<li>
+			    <a href="{:U('Agent/Index/myzr')}">{:L('充值记录')}</a>
+			</li>
+				<li>
+			    <a href="{:U('Agent/Index/myzc')}">{:L('提现记录')}</a>
+			</li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-rights" style="margin-right:10px;">
+		    	<li> <a href="{:U('?Lang=zh-cn')}">简体中文</a>	</li>
+			<li> <a href="{:U('?Lang=en-us')}">English</a>	</li>
+			<li>
+				<a class="dropdown-toggle" title="{:L('退出')}" href="{:U('Agent/Login/loginout')}" target="_blank">
+					<span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+<div id="main-content">
+	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+		<button class="close fixed" style="margin-top: 4px;">&times;</button>
+		<div class="alert-content">警告内容</div>
+	</div>
+	<div id="main" class="main">
+		<div class="main-title-h">
+			<span class="h1-title">在线客服</span>
+		</div>
+
+		<div class="data-table table-striped">
+			<form id="form"  method="post" class="form-horizontal">
+				<table class="">
+					<thead>
+					<tr>
+						<th class="row-selected row-selected">
+							<input class="check-all" type="checkbox"/>
+						</th>
+						<th class="">ID</th>
+						<th class="">会员账号</th>
+						<th class="">未回复记录</th>
+						<th class="">操作</th>
+					</tr>
+					</thead>
+					<tbody>
+					<notempty name="list">
+						<volist name="list" id="vo">
+							<tr>
+								<td>
+									<input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/>
+								</td>
+								<td>{$vo.id}</td>
+								<td>{$vo.username}</td>
+								<td>{$vo.nor}</td>
+                                <td>
+						            <a class="btn btn-primary btn-xs" href="{:U('Agent/Index/onlinelist')}?id={$vo.id}">查看详情</a>
+						        </td>
+							</tr>
+						</volist>
+						<else/>
+						<td colspan="12" class="text-center empty-info"><i class="glyphicon glyphicon-exclamation-sign"></i>暂无数据</td>
+					</notempty>
+					</tbody>
+				</table>
+			</form>
+			<div class="page">
+				<div>{$page}</div>
+			</div>
+		</div>
+     
+	</div>
+   
+	
+</div>
+
+<script type="text/javascript">
+	//提交表单
+	$('#submit').click(function () {
+		$('#form').submit();
+	});
+</script>
+<include file="Public:footer"/>
+<block name="script">
+	<script type="text/javascript" charset="utf-8">
+		//导航高亮
+		highlight_subnav("{:U('User/online')}");
+	</script>
+</block>

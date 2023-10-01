@@ -1,0 +1,18 @@
+body .layer-ext-myskin .layui-layer-content {
+    background: #1a1b1c;
+    border-radius:  0px 0px 10px 10px!important;
+}
+body .layer-ext-myskin .layui-layer-title {
+    background: #2c2d2e !important;
+    color: #2ebd85 !important;
+    border-radius: 10px 10px 0px 0px !important;
+}
+body .layer-ext-myskin .layui-layer-ico {
+    background: url(/Public/Home/static/imgs/close-small.png) no-repeat !important;
+    background-size: 25px 25px !important;
+    width: 30px !important;
+    height: 30px !important;
+}
+body .layer-ext-myskin .layui-layer {
+    border-radius: 15px !important;
+}

@@ -1,0 +1,518 @@
+html, body {
+	background-color: #121420;
+	margin:0px;
+	padding:0px;
+	font-family: BinancePlex,Arial,sans-serif!important;
+	font-size:14px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #424852;
+  font-size: 14px;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #424852;
+  font-size: 14px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #424852;
+  font-size: 14px;
+}
+input:focus{background:#1b1e25;outline: 1px solid #1b1e25;}
+select:focus{background:#1b1e25;outline: 1px solid #1b1e25;}
+textarea:focus{background:#1b1e25;outline: 1px solid #1b1e25;}
+.fl{float:left;}/*左浮动*/
+.fr{float:right;}/*右浮动*/
+.bhalf{width:50%;}/*div50%的宽度*/
+.allhg{height:100%;}/*继承父元素100%的高度*/
+.txtl{text-align: left;}
+.txtr{text-align: right;}
+/*.fcy{color:#FCD535;} !*黄色*!*/
+.fcy{color:#0052fe;} /*黄色*/
+.fcch{color:#707A8A;} /*灰色*/
+.fcc{color:#000;} /*灰色*/
+.fch{color:#000;} /*黑色*/
+.fzm{font-size:12px;}
+.fzmm{font-size:14px;}
+.fzmmm{font-size:14px;}
+.fw{font-weight: bold;}
+
+
+
+
+.fcfs{color: #73797f !important;}
+.fcgs{color: #2ebd85 !important;}
+.fccs{color: #73797f !important;}
+.fcc{color:#707A8A;}
+.fch{color:#000 !important;}
+.fcf{color:#fff;}
+.fcy{color:#00b897;}
+.fcb{color:#0052fe !important;}
+.fred{color:#CF304A}
+.fgreen{color:#03A66D;}
+.flogin{color:#6d7c82;}
+.floginbr{color:#16b979;}
+.fbaseblue {
+    color: #0052fe;
+}
+.f12{font-size:12px;}
+.f14{font-size:14px !important;}
+.f16{font-size:16px;}
+.f18{font-size:18px;}
+.f20{font-size:20px;}
+.f22{font-size:22px;}
+.f36{font-size:36px;}
+
+.hide {
+    display: none !important;
+}
+.hideen {
+    display: none;
+}
+
+.disblock {
+    display: block;
+}
+
+
+
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: #00b897;
+  overflow: hidden;
+}
+.footer{width:100%;height:65px;background:#222430;position:fixed;bottom:0px;z-index:999;padding-bottom: 10px;border-radius: 20px 20px 0px 0px;}
+.footer_op{width:20%;height:55px;float:left;}
+.f_op_t{width:100%;height:30px;text-align:center;}
+.fticon{width:25px;height: 25px;margin-top:5px;}
+.f_op_b{width:100%;height:20px;line-height:20px;text-align: center;}
+.nfticon{font-size: 24px;}
+.alltn{width:100%;height:40px;line-height:40px;text-align:center;border-radius:5px;background:#FCD535;}
+.allbtn{width:100%;height:50px;line-height:50px;text-align:center;background:#ccc;border-radius:5px;background: linear-gradient(to left,#eeb80d,#ffe35b);margin-top:20px;}
+
+
+.shuffl-title {
+    width: 100%;
+    height: 290px;
+    /*background: #282736;*/
+}
+
+.divfl {
+    float: left;
+}
+.shuffl-title-rtop {
+    height: 200px;
+    background: #1b1d2a;
+    border-radius: 20px;
+}
+.shuffl-title-rbottom {
+    margin-top: 7px;
+    height: 80px;
+    background: #1b1d2a;
+    border-radius:  20px;
+}
+
+.shuffl-title-r {
+    padding: 0px 0px 0px 7px ;
+    border-radius:20px;
+    height: 290px;
+}
+
+.zixunconten-box {
+    border-radius: 20px;
+    height: 90px;
+}
+
+.zixunconten-l {
+    border-radius: 20px;
+}
+
+.zixunconten-r {
+    border-radius: 20px;
+}
+
+.scroll-to-notice {
+    width:100%;
+    height:40px;
+    margin-top:5px;
+}
+
+.market {
+    width:98%;
+    background:#1b1d2a;
+    margin-top:10px;
+    border-radius: 20px;
+    margin: 10px 1%  0px 1%;
+}
+
+.zixunlist {
+    height: 150px;
+    width: 100%;
+    background: #1b1d2a;
+    border-radius: 20px;
+}
+
+.index-div-base-margin {
+    margin: 7px 1%  0px 1% !important;
+    width: 98% !important;
+}
+
+.market-list {
+    width:100%;
+    height:50px;
+    padding: 0px 7px;
+}
+.market-list-info {
+    color:#3db485;
+    border-radius: 5px;
+    width:70px;
+    height:35px;
+    line-height:35px;
+    text-align:center;
+    display:inline-block;
+    font-weight: bold;
+
+}
+
+.optionbox{
+    width:100%;
+    height:90px;
+    background:#1b1d2a;
+    border-radius:20px;
+    padding: 5px 8px;
+    margin-top: 10px;
+}
+
+
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+/* by default include the background of the option for the home navigation */
+/*body {*/
+/*    background: #5b37b7;*/
+/*    color: #010101;*/
+/*    !* center in the viewport *!*/
+/*    min-height: 100vh;*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    font-family: "Open Sans", sans-serif;*/
+/*    !* transition for the change in bg color *!*/
+/*    transition: background 0.2s ease-out;*/
+/*}*/
+
+/*!* display the anchor link side by side  *!*/
+/*nav {*/
+/*    display: flex;*/
+/*    background: #1b1d2a;*/
+/*    padding: 1.5rem 1.5rem;*/
+/*    border-radius: 20px;*/
+/*    box-shadow: 0 1px 15px rgb(0 0 0 / 10%);*/
+/*    !* margin-bottom: 40px; *!*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*}*/
+
+/*!* remove default style and slightly separate the anchor links from one another *!*/
+/*nav a {*/
+/*    color: inherit;*/
+/*    text-decoration: none;*/
+/*    margin: 0 1rem 0 1.5rem;*/
+/*    !* display the svg icon and span elements side by side, vertically aligned *!*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    !* include padding for the background applied on the active item *!*/
+/*    !* padding: 0.75rem 1.25rem; *!*/
+/*    border-radius: 30px;*/
+/*    !* position relative for the pseudo element *!*/
+/*    position: relative;*/
+/*    !* custom properties for the colors picked up by the elements when clicked (and updated for each link in the script) *!*/
+/*    --hover-bg: #5b37b720;*/
+/*    --hover-c: #5b37b7;*/
+/*}*/
+
+/*!* include considerable negative margin to have the svg icon overlapping with the span element *!*/
+/*nav a svg {*/
+/*    margin-right: -2.5rem;*/
+/*    width: 28px;*/
+/*    height: 28px;*/
+/*    pointer-events: none;*/
+/*    !* transition for the change in margin *!*/
+/*    transition: margin 0.2s ease-out;*/
+/*}*/
+/*!* by default hide the span element *!*/
+/*nav a span {*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    font-size: 0.9rem;*/
+/*    margin: 0px 0.4rem 0px 0.4rem;*/
+/*}*/
+/*!* include with a pseudo element relative to the anchor link a circle, with a fixed with and height *!*/
+/*nav a:before {*/
+/*    position: absolute;*/
+/*    content: "";*/
+/*    top: 50%;*/
+/*    left: 0;*/
+/*    width: 20%;*/
+/*    height: 70px;*/
+/*    border-radius: 50%;*/
+/*    !* positioned to the left of the anchor link and scaled to 0 *!*/
+/*    transform: translate(0%, -50%) scale(0);*/
+/*    visibility: visible;*/
+/*    opacity: 1;*/
+/*}*/
+/*!* when active *!*/
+/*!* specify the colors dictated by the custom properties *!*/
+/*nav a.active {*/
+/*    background: var(--hover-bg);*/
+/*    color: var(--hover-c) !important;*/
+/*}*/
+/*!* using the color specified by the then updated custom property show the circle of the pseudo element increasing its size and highlighting it momentarily *!*/
+/*nav a.active:before {*/
+/*    background: var(--hover-c);*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*    transform: translate(0%, -50%) scale(2);*/
+/*    !* transition only when the class is applied *!*/
+/*    transition: all 0.4s ease-out;*/
+/*}*/
+/*!* remove the margin applied to the svg to make it overlay atop the anchor link *!*/
+/*nav a.active svg {*/
+/*    margin-right: 0;*/
+/*}*/
+/*!* show the span element *!*/
+/*nav a.active span {*/
+/*    visibility: visible;*/
+/*    opacity: 1;*/
+/*    transition: all 0.2s ease-out;*/
+/*}*/
+
+/*!* on smaller viewports show the navigation bar on the side, attached to the left of the screen *!*/
+
+
+/*nav a{*/
+/*    color: #fff;*/
+/*}*/
+
+
+.nav-footer-a {
+    color: inherit !important;
+    text-decoration: none;
+    margin: 0 0.2rem;
+    align-items: center;
+    padding: 0.75rem 0.90rem;
+    border-radius: 30px;
+    position: relative;
+    --hover-bg: #5b37b720;
+    --hover-c: #5b37b7;
+}
+
+
+.nav-box {
+    width: 100%;
+    height: 100%;
+}
+
+.tcc{text-align:center;}
+.tcr{text-align:right;}
+
+.div-col-5 {
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+.no_header {
+    /*position: fixed;*/
+    z-index: 9999;
+    /*background: #282736;*/
+    padding:0px 10px;
+    background-color:rgba(0,0,0,0);
+}
+
+.nav-img {
+    width: 25px;
+    margin-right: 30%;
+}
+
+.optext:visited {
+    visibility: visible;
+}
+
+.icon_spot {
+    width: 50px;
+}
+.shuffl-title-rbottom-p {
+    margin-bottom: 0px!important;
+
+}
+
+.shuffl-title-rbottom-l {
+    padding-top: 18px;
+}
+.shuffl-title-rbottom-r {
+    padding: 0px;
+    padding-top: 10px;
+}
+
+.icon-top {
+    width: 100%;
+}
+
+.fbg::placeholder {
+    color: #3db485 !important;
+}
+
+.fe6 { color: #e6e6e6}
+.fe6im { color: #e6e6e6 !important;}
+.fa8a { color: #707A8A}
+.bgf5465c {
+    background: #f5465c;
+}
+
+.bgf5465cim {
+    background: #f5465c !important;
+}
+
+
+.f121420im {
+    color: #121420 !important;
+
+}
+
+.timer_t_box {
+    width:100%;
+    min-height:80px;
+    /*background: #2c2d2e;*/
+    /*box-shadow: 2px 2px 2px #2c2d2e;*/
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 1px solid #1eb585;
+}
+
+.timer_t_box_list {
+    width: 90%;
+    margin:10px auto;
+    height: 30px;
+    line-height: 30px;
+
+}
+
+.timer_t_box_msg {
+    padding: 0 20px;
+}
+
+.wait_box_info {
+    width: 100%;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    /*background: #2c2d2e;*/
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #1eb585;
+}
+
+.fc51 {
+    color: #768da9;
+}
+
+.fc1e {
+    color: #1eb585;
+}
+
+.fce5 {
+    color: #A9AEB8;
+}
+
+.fc6b7785 {
+    color: #6b7785;
+}
+
+.ti12 {
+    text-indent:12px;
+}
+
+.pl20{padding-left:20px!important;}
+.pt20{padding-top:20px!important;}
+
+.top-title-b {
+    width: 90%;
+    height: 85px;
+    background-color: #E1F5Ed;
+    margin: 0px 5%;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 5px 5px 0 0;
+    padding: 10px 10px 10px 20px;
+}
+
+.top-title-a {
+    width: 100%;
+    height: 60%;
+}
+
+.top-title-a-nfo {
+    height: 50px;
+    width: 100%;
+    padding:50px 0 0 20px;
+}
+
+.f30 {
+    font-size: 30px;
+}
+
+.wt80b {
+    width: 80%;
+}
+
+
+.top-title-msg {
+    width: 120px;
+    background-image: url(/Public/Mobile/images/bg-title.png);
+    background-repeat: no-repeat;
+    background-size: 120px 100%;
+    padding-left: 5px;
+}
+
+.ieo-buy-go {
+    background-image: url(/Public/Mobile/images/jiantou.png);
+    background-repeat: no-repeat;
+    background-size: 40px auto;
+    height: 60px;
+    float: right;
+    width: 55px;
+    position: absolute;
+    right: 0;
+    top: 42px;
+}
+
+.f444545 {
+    color: #444545;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+.ml20 {
+    margin-left: 20px;
+}
+
+.rzred {
+    color: #f5465c;
+}
+.rzgreen {
+    color: #2ebc84;
+}
+
+
+
+
