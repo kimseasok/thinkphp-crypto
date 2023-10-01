@@ -4,4 +4,6 @@
 /data/*
 /logs/*
 /www/Runtime/**
+www/Application/Home/Controller/log
+*.log
 .DS_Store
