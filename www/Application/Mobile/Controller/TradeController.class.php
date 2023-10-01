@@ -582,7 +582,6 @@ class TradeController extends MobileController
         
         $list = M("ctmarket")->where(array('status'=>1))->field("coinname,id,logo")->select();
         unset($list['6']);
-var_dump($list);exit;
         $this->assign("market",$list);
         
         
