@@ -1108,9 +1108,6 @@
 }
 
 .dela-presets-container-2 {
-  background: url(images/main-background-2.svg) no-repeat;
-  background-size: 100em auto;
-  background-position: top;
   padding: 6em 0;
   display: flex;
   justify-content: center;
