@@ -29,8 +29,8 @@ RUN docker-php-ext-install curl \
     && docker-php-ext-install -j$(nproc) gd 
 
 # Enable apache modules
-RUN a2enmod rewrite headers
+RUN a2enmod rewrite headers && a2enmod ssl
 
-EXPOSE 80
+EXPOSE 80 443
 
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
