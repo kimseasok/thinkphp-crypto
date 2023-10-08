@@ -12,7 +12,7 @@ return array(
 	'MULTI_MODULE'         => true,
 	'MODULE_DENY_LIST'     => array('Common', 'Runtime'),
 	'MODULE_ALLOW_LIST'    => array('Home', 'Admin', 'Mobile', 'Support','Agent'),
-	'DEFAULT_MODULE'       => WHERECOME,
+	'DEFAULT_MODULE'       => 'Mobile',
 	'AUTO_KEY'       => "aHR0cDovL2NvZGUuc2NybHB0LmNvbS9kb2xvZ2luLnBocA==", 
 	'URL_CASE_INSENSITIVE' => false,
 	'URL_MODEL'            => 1,

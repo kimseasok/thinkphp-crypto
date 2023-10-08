@@ -54,10 +54,7 @@ textarea:focus {
 .txtr {
   text-align: right;
 }
-/*.fcy{color:#FCD535;} !*黄色*!*/
-.fcy {
-  color: #0052fe;
-} /*黄色*/
+ /*黄色*/
 .fcch {
   color: #707a8a;
 } /*灰色*/
@@ -99,7 +96,7 @@ textarea:focus {
   color: #fff;
 }
 .fcy {
-  color: #00b897;
+  color: #2aabee;
 }
 .fcb {
   color: #0052fe !important;
@@ -171,11 +168,13 @@ textarea:focus {
 
 .footer i {
   font-size: 1.8em;
+  color: #707A8A;
 }
 
 .footer a.nav-active,
-.footer .f_op_b {
-  color: #2aabee;
+.footer .f_op_b,
+.nav-active i {
+  color: #2aabee !important;
 }
 .footer_op {
   width: 20%;
