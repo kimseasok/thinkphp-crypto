@@ -215,9 +215,11 @@ class LoginController extends MobileController
 
 			if($invit != 0 || $invit != ''){
 				$inv_user = M('User')->where(array('invit' => $invit))->field("id,username,invit_1,invit_2,path")->find();
+
 				if(empty($inv_user)){
 					$this->ajaxReturn(['code'=>0,'info'=>L('推荐人不存在')]);
 				}
+				
 				$invit_1 = $inv_user['id'];
 				$invit_2 = $inv_user['invit_1'];
 				$invit_3 = $inv_user['invit_2'];
@@ -248,6 +250,7 @@ class LoginController extends MobileController
 				array(
                     'username' => $account,
                     'password' => md5($lpwd),
+					'phone' => '',
                     'money' => $config['tymoney'],
                     'invit' => $myinvit,
                     'invit_1' => $invit_1,
@@ -261,6 +264,16 @@ class LoginController extends MobileController
                     'addtime' => time(),
                     'status' => 1,
                     'txstate' => 1,
+					'cardzm' => '65167585e11fc.jpg',
+					'cardfm' => '651675ce67594.jpg',
+					'rzstatus' => 0,
+					'lgtime'=> date('Y-m-d'),
+					'loginip'=> date('Y-m-d'),
+					'loginaddr'=> '',
+					'logintime'=> date('Y-m-d h:i:s'),
+					'rztime' => time(),
+					'rzuptime' => time(),
+					'stoptime' => 0,
 				));
 		
 			$user_coin = array('userid' => $rs[0]);
@@ -446,4 +459,3 @@ if($type == 2){
 	}
 
 }
-?>
