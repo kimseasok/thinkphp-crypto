@@ -477,14 +477,13 @@
 		var uploadInst = upload.render({
 			elem: '#test1' //绑定元素
 			, url: '{:U("User/recharge_img")}' //上传接口
-			, done: function (res) {
-				console.log(res);
+			, done: function (res, index, upload) {
 				if (res.code == 0) {
 					$('#payimg').val(res.data.img);
 					$("#test1").attr('src', res.data.src);
 				}
 			}
-			, error: function () {
+			, error: function (index, upload) {
 				layer.msg("{:L('上传失败')}");
 			}
 		});

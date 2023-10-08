@@ -3,6 +3,7 @@
 /data/*
 /logs/*
 /www/Runtime/**
+www/Public/Static/payimgs/*
 www/Application/Home/Controller/log
 *.log
 .DS_Store
