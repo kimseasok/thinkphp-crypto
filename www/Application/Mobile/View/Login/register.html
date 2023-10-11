@@ -307,6 +307,10 @@
             -webkit-appearance: none;
             background: #2aabee;
         }
+
+        .d-none {
+            display: none;
+        }
     </style>
 </head>
 
@@ -342,18 +346,17 @@
             <div class="dela-presets-container-2">
                 <div class="dela-preset-container">
                     <form class="dela-preset-2-2" onclick="return false" method="get">
-                        <div class="fd-box">
-                            <span class="fsl dfs spanchl" onclick="stype(1)">{:L('手机')}</span>
-                            <span class="fsr dfs spanchr" onclick="stype(2)">{:L('邮箱reg')}</span>
-
+                        <div class="fd-box d-none">
+                            <span class="fsl dfs spanchl d-none fsr" onclick="stype(1)">{:L('手机')}</span>
+                            <span class="fsr dfs spanchr fsl" onclick="stype(2)">{:L('邮箱reg')}</span>
                         </div>
 
 
-                        <input type="hidden" name="type" id="type" value="1">
+                        <input type="hidden" name="type" id="type" value="2">
                         <input type="hidden" name="account" id="account">
                         <input type="email" class="pml" name="email" id="email" placeholder="E-mail" required=""
-                            autocomplete="email" style="display: none">
-                        <div id="main_demo" style="margin-bottom:1.1em;display: block">
+                            autocomplete="email">
+                        <div id="main_demo" style="margin-bottom:1.1em;" class="d-none">
                             <div class="container">
                                 <div class="form-item">
                                     <input id="country_selector" class="pml" type="text">
@@ -373,7 +376,7 @@
 
                                 <input type="text" class="pml fl" id="ecode" name="code" placeholder="Code" class="code"
                                     required="" style="width: 70%;border-radius:  0;border: none">
-                                <input type="submit" class="pml fl fbg" onclick="emailsend();" value="{:L('提交')}"
+                                <input type="submit" class="pml fl fbg" onclick="emailsend(2);" value="{:L('提交')}"
                                     name="code" placeholder="Send" class="send-btn" required=""
                                     style="width: 30%;border-radius: 0; text-align: center; border: none; color: #fff;margin-bottom: 1.3em;border: none;height: 23px;">
                             </div>
