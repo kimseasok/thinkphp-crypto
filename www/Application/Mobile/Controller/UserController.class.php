@@ -122,6 +122,7 @@ class UserController extends MobileController
 			$notice['content'] = L('实名资料提成功，耐心等待管理员审核');
 			$notice['addtime'] = date("Y-m-d H:i:s", time());
 			$notice['status'] = 1;
+			$notice['imgs'] = '';
 			M("notice")->add($notice);
 			$this->ajaxReturn(['code' => 1, 'info' => L('认证资料提交成功')]);
 		} else {
@@ -801,7 +802,7 @@ class UserController extends MobileController
 			$data['address'] = $address;
 			$data['sort'] = 1;
 			$data['addtime'] = date("Y-m-d H:i:s", time());
-			$data['endtime'] = '';
+			$data['endtime'] = date("Y-m-d H:i:s", time());
 			$data['status'] = 1;
 			$data['czline'] = $czline;
 			$result = M("myzc")->add($data);

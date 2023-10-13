@@ -89,6 +89,7 @@ class FinanceController extends AdminController
 		    $notice['account'] = $info['username'];
 		    $notice['title'] = L('充币审核');
 		    $notice['content'] = L('您的充值金额已到账，请注意查收');
+		    $notice['imgs'] = '';
 		    $notice['addtime'] = date("Y-m-d H:i:s",time());
 		    $notice['status'] = 1;
 		    M("notice")->add($notice);
@@ -183,6 +184,7 @@ class FinanceController extends AdminController
 		    $notice['account'] = $info['username'];
 		    $notice['title'] = L('提币审核');
 		    $notice['content'] = L('您的提币申请已通过，请及时查询');
+		    $notice['imgs'] = '';
 		    $notice['addtime'] = date("Y-m-d H:i:s",time());
 		    $notice['status'] = 1;
 		    M("notice")->add($notice);
@@ -251,6 +253,4 @@ class FinanceController extends AdminController
 		$this->display();
 	}
 
-
 }
-?>

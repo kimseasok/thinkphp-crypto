@@ -134,7 +134,7 @@
         }
 
         .bggreen {
-            background: #2aabee;
+            background: #2aabee !important;
         }
 
         .green {
@@ -1175,11 +1175,11 @@
         var buytype = $("#buytype").val();
         if (buytype == 1) {
             if (mnum <= 0) {
-                layer.msg("{:L('输入数量')}"); return false;
+                layer.msg("{:L('输入数量')} Hello 1"); return false;
             }
         } else if (buytype == 2) {
             if (musdt <= 0) {
-                layer.msg("{:L('输入USDT数量')}"); return false;
+                layer.msg("{:L('输入USDT数量')} Hello"); return false;
             }
         }
 
@@ -1433,6 +1433,7 @@
             $("#musdt").val(buyusdt);
         }
     }
+
     function buyusdtfc() {
         var newprice = parseFloat($("#newprice").val());
         var buyusdt = parseFloat($("#buyusdt").val());
@@ -1448,6 +1449,7 @@
         }
     }
 </script>
+
 <script type="text/javascript">
     function sellnumfc() {
         var newbuynum = $("#sell_num").val();
