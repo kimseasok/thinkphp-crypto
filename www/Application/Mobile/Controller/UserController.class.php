@@ -229,7 +229,6 @@ class UserController extends MobileController
 	{
 		$uid = userid();
 		$wallinfo = M("user_coin")->where(array('userid' => $uid))->find();
-
 		$coinapi = "https://api.huobi.pro/market/history/kline?period=1day&size=1&symbol=htusdt";
 		$result = $this->get_maket_api($coinapi);
 		$price_arr  = $result['data'][0];
@@ -241,6 +240,7 @@ class UserController extends MobileController
 		$re['code'] = 1;
 
 		session("htzh", $re['zhe']);
+
 		$this->ajaxReturn($re);
 	}
 
@@ -1103,7 +1103,6 @@ class UserController extends MobileController
 	//我的资产中心
 	public function index()
 	{
-		//var_dump(session());
 		$uid = userid();
 		if ($uid <= 0) {
 			$this->redirect('Login/index');
@@ -1122,7 +1121,6 @@ class UserController extends MobileController
 		$info = M("coin")->where($map)->field("name,title,id")->find();
 		$uname = strtoupper($info['name']);
 		$info['uname'] = $uname;
-		//print_r($info);die;
 		$this->ajaxReturn(['code' => 1, 'info' => $info]);
 	}
 
@@ -1214,20 +1212,18 @@ class UserController extends MobileController
 		}
 		//	var_dump($agentid);exit;
 		if (empty($agentid)) {
-			$list = M("coin")->where(array('status' => 1, "default_on" => 1))->order('id asc')->field("name,title,id,czstatus")->select();
+			$list = M("coin")->where(array('status' => 1, "default_on" => 1, "name" => "usdt"))->order('id asc')->field("name,title,id,czstatus")->select();
 		} else {
 
 			$list = M("coin")->where(array('status' => 1, 'agent_id' => $agentid, "default_on" => 0))->order('id asc')->field("name,title,id,czstatus")->select();
+
 			$where['name'] = array('neq', "usdt");
+
 			$list1 = M("coin")->where(array('status' => 1, "default_on" => 1))->where($where)->order('id asc')->field("name,title,id,czstatus")->select();
 
 			$list =  array_merge($list1, $list);
-			// var_dump($list);exit;
-
-			/* if(empty($list)){
-	           $list = M("coin")->where(array('status'=>1,"default_on"=>1))->order('id asc')->field("name,title,id,czstatus")->select();
-	         }*/
 		}
+
 		$this->assign("list", $list);
 		$this->display();
 	}

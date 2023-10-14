@@ -699,6 +699,7 @@
             { 'coin': coin },
             function (data) {
                 if (data.code == 1) {
+                    console.log(data)
                     $(numid).html(data.num);
                     $(numdid).html(data.numd);
                     $(zheheid).html(data.zhe);
@@ -765,10 +766,11 @@
         setInterval("getmoney_eos()", 5000);
         setInterval("getmoney_eth()", 3000);
         setInterval("getmoney_btc()", 2000);
-        getmoney_btc();
         setInterval("getallzhehe()", 2000);
+        getmoney_btc();
         getallzhehe();
         getmoney_usdt();
+        getmoney_ht();
     });
 </script>
 <script type="text/javascript">
