@@ -348,7 +348,6 @@
             { 'coin': coin },
             function (data) {
                 if (data.code == 1) {
-                    console.log(data);
                     $(nameclass).html(data.cname);
                     $(priceclass).html(data.open);
                     $(changeclass).html(data.change);
@@ -601,43 +600,117 @@
         );
     }
 </script>
+
+<script type="text/javascript">
+    function obtain_cix() {
+        var coin = "usdz";
+        var nameclass = ".cn_cix";
+        var priceclass = ".cpr_cix";
+        var changeclass = ".cch_cix";
+        $.post("{:U('Ajaxtrade/obtain_cix')}",
+            { 'coin': coin },
+            function (data) {
+                if (data.code == 1) {
+                    $(nameclass).html("CIX/USDT");
+                    $(priceclass).html(data.price);
+                    $(changeclass).html(data.change);
+                } else {
+                    console.log(data.info); return false;
+                }
+            }
+        );
+    }
+</script>
+
+<script type="text/javascript">
+    function obtain_tix() {
+        var coin = "usdz";
+        var nameclass = ".cn_tix";
+        var priceclass = ".cpr_tix";
+        var changeclass = ".cch_tix";
+        $.post("{:U('Ajaxtrade/obtain_tix')}",
+            { 'coin': coin },
+            function (data) {
+                if (data.code == 1) {
+                    $(nameclass).html("TIX/USDT");
+                    $(priceclass).html(data.price);
+                    $(changeclass).html(data.change);
+                } else {
+                    console.log(data.info); return false;
+                }
+            }
+        );
+    }
+</script>
+
+<script type="text/javascript">
+    function obtain_xid() {
+        var coin = "usdz";
+        var nameclass = ".cn_xid";
+        var priceclass = ".cpr_xid";
+        var changeclass = ".cch_xid";
+        $.post("{:U('Ajaxtrade/obtain_xid')}",
+            { 'coin': coin },
+            function (data) {
+                if (data.code == 1) {
+                    $(nameclass).html("CIX/USDT");
+                    $(priceclass).html(data.price);
+                    $(changeclass).html(data.change);
+                } else {
+                    console.log(data.info); return false;
+                }
+            }
+        );
+    }
+</script>
+
 <script type="text/javascript">
     $(function () {
-        //obtain_btc();
-        // setInterval("obtain_btc()",2000); 
-        // //obtain_eth();
-        // setInterval("obtain_eth()",3000); 
+        // obtain_btc();
+        // setInterval("obtain_btc()", 2000);
+        // obtain_eth();
+        // setInterval("obtain_eth()", 3000);
         // obtain_eos();
-        // setInterval("obtain_eos()",5000);
+        // setInterval("obtain_eos()", 5000);
         // obtain_doge();
-        // setInterval("obtain_doge()",7000);
+        // setInterval("obtain_doge()", 7000);
         // obtain_bch();
-        // setInterval("obtain_bch()",9000);
+        // setInterval("obtain_bch()", 9000);
         // obtain_ltc();
-        // setInterval("obtain_ltc()",11000);
+        // setInterval("obtain_ltc()", 11000);
 
         // obtain_iota();
-        // setInterval("obtain_iota()",13000);
+        // setInterval("obtain_iota()", 13000);
 
         // obtain_fil();
-        // setInterval("obtain_fil()",15000);
+        // setInterval("obtain_fil()", 15000);
 
         // obtain_flow();
-        // setInterval("obtain_flow()",17000);
+        // setInterval("obtain_flow()", 17000);
 
         // obtain_jst();
-        // setInterval("obtain_jst()",19000);
+        // setInterval("obtain_jst()", 19000);
 
         // obtain_itc();
-        // setInterval("obtain_itc()",21000);
+        // setInterval("obtain_itc()", 21000);
 
         // obtain_ht();
-        // setInterval("obtain_ht()",23000);
+        // setInterval("obtain_ht()", 23000);
 
-        //  obtain_usdz();
-        //  setInterval("obtain_usdz()",25000);
-        //getallsymbol();
-        //setInterval("getallsymbol()",2000); 
+        // obtain_usdz();
+        // setInterval("obtain_usdz()", 25000);
+
+        obtain_cix();
+        setInterval("obtain_cix()", 27000);
+
+        obtain_tix();
+        setInterval("obtain_tix()", 29000);
+
+        obtain_xid();
+        setInterval("obtain_xid()", 31000);
+
+        // getallsymbol();
+        // setInterval("getallsymbol()",2000); 
     });
 </script>
 
@@ -686,15 +759,14 @@
     let subK11 = {
         "sub": "market.adpusdt.kline.1day"
     };
+
     let subK12 = {
         "sub": "market.bbfusdt.kline.1day"
     };
+
     let subK13 = {
         "sub": "market.kokusdt.kline.1day"
     };
-
-
-
 
     let socketK = new WebSocket(hburl);
     socketK.onopen = function () {
@@ -760,13 +832,10 @@
                     $('.cch_eth').html("<span  class='fzmm bred market-list-info'>" + fd2.toFixed(2) + "%</span>");
                 }
 
-
-
                 //             $("#bch_coin_box").html(data.bchcoin);
                 //             $("#bch_money_box").html(data.bchnewprice);
                 //             $("#bch_change_box").html(data.bchchange);            
             } else if (data.ch == 'market.btcusdt.kline.1day') {
-                console.log(data);
                 //波动btc
                 $('.cn_btc').html('BTC/USDT');
                 $("#btc_coin_box").html('BTC/USDT');
@@ -803,10 +872,6 @@
                     $('.cch_bch').html("<span  class='fzmm bred market-list-info'>" + fd2.toFixed(2) + "%</span>");
                 }
 
-
-
-
-
             } else if (data.ch == 'market.eosusdt.kline.1day') {
                 $('.cn_eos').html('EOS/USDT');
 
@@ -822,10 +887,6 @@
                 } else {
                     $('.cch_eos').html("<span  class='fzmm bred market-list-info'>" + fd2.toFixed(2) + "%</span>");
                 }
-
-
-
-
 
             } else if (data.ch == 'market.dogeusdt.kline.1day') {
                 $('.cn_doge').html('DOGE/USDT');
@@ -843,10 +904,6 @@
                     $('.cch_doge').html("<span  class='fzmm bred market-list-info'>" + fd2.toFixed(2) + "%</span>");
                 }
 
-
-
-
-
             } else if (data.ch == 'market.ltcusdt.kline.1day') {
                 $('.cn_ltc').html('DOGE/USDT');
 
@@ -862,10 +919,6 @@
                 } else {
                     $('.cch_ltc').html("<span  class='fzmm bred market-list-info'>" + fd2.toFixed(2) + "%</span>");
                 }
-
-
-
-
 
             } else if (data.ch == 'market.htusdt.kline.1day') {
                 $('.cn_ht').html('HT/USDT');
@@ -1085,10 +1138,6 @@
                 }
 
             }
-
-
-
-
 
         }
     }

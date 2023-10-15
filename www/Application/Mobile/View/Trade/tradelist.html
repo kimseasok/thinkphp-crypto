@@ -1162,6 +1162,69 @@
     }
 </script>
 
+<script type="text/javascript">
+    function obtain_cix() {
+        var coin = "cix";
+        var nameclass = ".cn_cix";
+        var priceclass = ".cpr_cix";
+        var changeclass = ".cch_cix";
+        $.post("{:U('Ajaxtrade/obtain_cix')}",
+            { 'coin': coin },
+            function (data) {
+                if (data.code == 1) {
+                    $(nameclass).html("CIX/USDT");
+                    $(priceclass).html(data.price);
+                    $(changeclass).html(data.change);
+                } else {
+                    console.log(data.info); return false;
+                }
+            }
+        );
+    }
+</script>
+
+<script type="text/javascript">
+    function obtain_xid() {
+        var coin = "cix";
+        var nameclass = ".cn_xid";
+        var priceclass = ".cpr_xid";
+        var changeclass = ".cch_xid";
+        $.post("{:U('Ajaxtrade/obtain_xid')}",
+            { 'coin': coin },
+            function (data) {
+                if (data.code == 1) {
+                    $(nameclass).html("XID/USDT");
+                    $(priceclass).html(data.price);
+                    $(changeclass).html(data.change);
+                } else {
+                    console.log(data.info); return false;
+                }
+            }
+        );
+    }
+</script>
+
+<script type="text/javascript">
+    function obtain_tix() {
+        var coin = "tix";
+        var nameclass = ".cn_tix";
+        var priceclass = ".cpr_tix";
+        var changeclass = ".cch_tix";
+        $.post("{:U('Ajaxtrade/obtain_tix')}",
+            { 'coin': coin },
+            function (data) {
+                if (data.code == 1) {
+                    $(nameclass).html("CITY/USDT");
+                    $(priceclass).html(data.price);
+                    $(changeclass).html(data.change);
+                } else {
+                    console.log(data.info); return false;
+                }
+            }
+        );
+    }
+</script>
+
 
 <script type="text/javascript">
     $(function () {
@@ -1178,45 +1241,52 @@
             }
         }
 
-        //obtain_btc();
-        //   setInterval("obtain_btc()",2000);
-        //obtain_eth();
-        //   setInterval("obtain_eth()",3000);
-        //obtain_eos();
-        //   setInterval("obtain_eos()",5000);
-        //   obtain_doge();
-        //   setInterval("obtain_doge()",7000);
-        //   obtain_bch();
-        //   setInterval("obtain_bch()",9000);
-        //   obtain_ltc();
-        //   setInterval("obtain_ltc()",11000);
+        // obtain_btc();
+        // setInterval("obtain_btc()", 2000);
+        // obtain_eth();
+        // setInterval("obtain_eth()", 3000);
+        // obtain_eos();
+        // setInterval("obtain_eos()", 5000);
+        // obtain_doge();
+        // setInterval("obtain_doge()", 7000);
+        // obtain_bch();
+        // setInterval("obtain_bch()", 9000);
+        // obtain_ltc();
+        // setInterval("obtain_ltc()", 11000);
 
-        //   obtain_iota();
-        //   setInterval("obtain_iota()",13000);
+        // obtain_iota();
+        // setInterval("obtain_iota()", 13000);
 
-        //   obtain_fil();
-        //   setInterval("obtain_fil()",15000);
+        // obtain_fil();
+        // setInterval("obtain_fil()", 15000);
 
-        //   obtain_flow();
-        //   setInterval("obtain_flow()",17000);
+        // obtain_flow();
+        // setInterval("obtain_flow()", 17000);
 
-        //   obtain_jst();
-        //   setInterval("obtain_jst()",19000);
+        // obtain_jst();
+        // setInterval("obtain_jst()", 19000);
 
-        //   obtain_itc();
-        //   setInterval("obtain_itc()",21000);
+        // obtain_itc();
+        // setInterval("obtain_itc()", 21000);
 
-        //   obtain_ht();
-        //   setInterval("obtain_ht()",23000);
+        // obtain_ht();
+        // setInterval("obtain_ht()", 23000);
 
-        //   obtain_hm();
-        //   setInterval("obtain_hm()",25000);
-        //getallsymbol();
-        //setInterval("getallsymbol()",5000);
-        //   getonemarket();
-        //   setInterval("getonemarket()",2000);
+        // obtain_hm();
+        // setInterval("obtain_hm()", 25000);
 
+        obtain_xid();
+        setInterval("obtain_xid()", 27000);
 
+        obtain_cix();
+        setInterval("obtain_cix()", 29000);
+
+        obtain_tix();
+        setInterval("obtain_tix()", 31000);
+        // getallsymbol();
+        // setInterval("getallsymbol()", 5000);
+        // getonemarket();
+        // setInterval("getonemarket()", 2000);
     });
 
 

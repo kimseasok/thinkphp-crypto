@@ -674,7 +674,6 @@
                     ?>" noresize="noresize" frameborder="0" >不支持IFRAME，请升级</iframe>
             </div>
             <script>
-			//alert(333);
 			WebView webView = findViewById(R.id.web);
             String url = "https://morbion1.com/Trade/ordinary?market=" + { $market };
                 webView.loadUrl(url);
@@ -1717,9 +1716,6 @@
 
                     }
                 }
-
-
-
             } else if (data.ch == 'market.dogeusdt.kline.1day') {
                 var fd = data.tick.close - data.tick.open;
                 var fd2 = fd / data.tick.open * 100;
@@ -1744,11 +1740,6 @@
 
                     }
                 }
-
-
-
-
-
 
             } else if (data.ch == 'market.ltcusdt.kline.1day') {
                 var fd = data.tick.close - data.tick.open;
@@ -1775,18 +1766,7 @@
 
                     }
                 }
-
-
-
-
-
-
             }
-
-
-
-
-
         }
     }
     // 发送响应信息

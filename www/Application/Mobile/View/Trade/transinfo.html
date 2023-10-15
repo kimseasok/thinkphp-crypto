@@ -603,27 +603,11 @@
 
                     <!--买入框-->
                     <div class="formbox" id="buycoinbox" style="display:block;">
-                        <div class="formbox_op">
-                            <div class="formbox_op_list" id="buyxjbtn">
-                                <span class="fzmm fcy" id="xjspan">{:L('限价委托')}</span>
-                            </div>
-                            <div class="formbox_op_list" id="buysjbtn">
-                                <span class="fzmm fcc" id="sjspan">{:L('市价委托')}</span>
-                            </div>
-                        </div>
 
                         <!--限价委托单价框-->
                         <div class="inputbox" id="xjbox">
                             <div class="inputbox_float">
                                 <input type="text" id="newprice" class="fcc xjinput" value="" />
-                            </div>
-                            <div class="inputbox_float" style="width:40%;">
-                                <div class="input_bi borderright" id="dash_buyprice">
-                                    <i class="bi bi-dash bistyle"></i>
-                                </div>
-                                <div class="input_bi" id="plus_buyprice">
-                                    <i class="bi bi-plus bistyle"></i>
-                                </div>
                             </div>
                         </div>
 
@@ -634,22 +618,6 @@
                         </div>
 
                         <div class="inputbox" id="sjnumbox" style="display:none;border:none;"></div>
-
-                        <div class="inputbox" id="xjnumbox" style="display:block;">
-                            <div class="inputbox_float">
-                                <input type="text" id="buynum" oninput="buynumfc();" class="fcc xjinput" value=""
-                                    placeholder="{:L('输入数量')}" autocomplete="off" step="1" min="0"
-                                    onkeyup="this.value= this.value.match(/\d+(\.\d{0,6})?/) ? this.value.match(/\d+(\.\d{0,6})?/)[0] : ''" />
-                            </div>
-                            <div class="inputbox_float" style="width:40%;">
-                                <div class="input_bi borderright" id="dash_buynum">
-                                    <i class="bi bi-dash bistyle"></i>
-                                </div>
-                                <div class="input_bi" id="plus_buynum">
-                                    <i class="bi bi-plus bistyle"></i>
-                                </div>
-                            </div>
-                        </div>
 
 
                         <div class="blbox">
@@ -721,14 +689,6 @@
 
                     <!--卖出框-->
                     <div class="formbox" id="sellcoinbox" style="display:none;">
-                        <div class="formbox_op">
-                            <div class="formbox_op_list" id="sell_xjbtn">
-                                <span class="fzmm fcy" id="sell_xjspan">{:L('限价委托')}</span>
-                            </div>
-                            <div class="formbox_op_list" id="sell_sjbtn">
-                                <span class="fzmm fcc" id="sell_sjspan">{:L('市价委托')}</span>
-                            </div>
-                        </div>
 
                         <!--限价委托单价框-->
                         <div class="inputbox" id="sell_xjbox">
@@ -1125,7 +1085,6 @@
 </script>
 <script type="text/javascript">
     function bb_sellcoin(type) {
-        console.log(type, '----------')
         var type = type;
         if (type <= 0) {
             layer.msg("{:L('缺少重要参数')}"); return false;
@@ -1175,11 +1134,11 @@
         var buytype = $("#buytype").val();
         if (buytype == 1) {
             if (mnum <= 0) {
-                layer.msg("{:L('输入数量')} Hello 1"); return false;
+                layer.msg("{:L('输入数量')}"); return false;
             }
         } else if (buytype == 2) {
             if (musdt <= 0) {
-                layer.msg("{:L('输入USDT数量')} Hello"); return false;
+                layer.msg("{:L('输入USDT数量')}"); return false;
             }
         }
 
@@ -1366,6 +1325,28 @@
 </script>
 <script type="text/javascript">
     //出售框
+    $("#sjspan").addClass("fcy");
+    $("#sjspan").removeClass("fcc");
+    $("#xjspan").addClass("fcc");
+    $("#xjspan").removeClass("fcy");
+    $("#sjbox").show();
+    $("#xjbox").hide();
+    $("#buytype").val(2);
+    $("#xjnumbox").hide();
+    $("#sjnumbox").show();
+
+    $("#sell_sjspan").addClass("fcy");
+    $("#sell_sjspan").removeClass("fcc");
+    $("#sell_xjspan").addClass("fcc");
+    $("#sell_xjspan").removeClass("fcy");
+    $("#sell_sjbox").show();
+    $("#sell_xjbox").hide();
+    $("#buytype").val(2);
+    $("#sell_xjnumbox").hide();
+    $("#sell_sjnumbox").show();
+    $("#sellxjusdt").hide();
+    $("#sellxjcoin").show();
+
     $("#sell_xjbtn").click(function () {
         $("#sell_xjspan").addClass("fcy");
         $("#sell_xjspan").removeClass("fcc");

@@ -319,7 +319,7 @@ class ContractController extends MobileController
 	        $odata['selltime'] = date("Y-m-d H:i:s",(time()+$ctime*60));
 	        $odata['intselltime'] = time() + $ctime*60;
 	        $odata['buyprice'] = $close;
-	        $odata['sellprice'] = '';
+	        $odata['sellprice'] = 0;
 	        $odata['ploss'] = 0;
 	        $odata['time'] = $ctime;
 	        $odata['kongyk'] = 0;
@@ -457,7 +457,7 @@ class ContractController extends MobileController
 	        $odata['selltime'] = date("Y-m-d H:i:s",(time()+$ctime*60));
 	        $odata['intselltime'] = time() + $ctime*60;
 	        $odata['buyprice'] = $close;
-	        $odata['sellprice'] = '';
+	        $odata['sellprice'] = 0;
 	        $odata['ploss'] = 0;
 	        $odata['time'] = $ctime;
 	        $odata['kongyk'] = 0;
